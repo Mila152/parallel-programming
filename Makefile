@@ -1,2 +1,2 @@
-all: main.cpp
-		g++ main.cpp -o output.out
+all: main.cpp person.cpp
+		g++ main.cpp person.cpp -o output.out

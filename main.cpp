@@ -4,7 +4,6 @@
 #include <sys/ipc.h>
 #include <sys/shm.h>
 #include "person.h"
-#include "person.cpp"
 
 void LogError (const char*);
 
@@ -16,15 +15,15 @@ int main() {
         return 1;
     }
 
+    Person* shared_class = shared_class->getInstance();
+
     if (0 == child_id) {
-        Person* shared_class = shared_class->getInstance();
         std::cout << getpid() << " Hello from Child!" << std::endl;
         shared_class->setName("Artak");
         shared_class->setAge(56);
         std::cout << "Name: " << shared_class->getName() << std::endl << "Age: " << shared_class->getAge() << std::endl;
         return 0;
     } else {
-        Person* shared_class = shared_class->getInstance();
         std::cout<< getpid() << " Hello from Parent!" << std::endl;
         shared_class->setName("Katra");
         shared_class->setAge(65);

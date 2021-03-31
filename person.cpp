@@ -1,3 +1,8 @@
+#include <iostream>
+#include <string.h>
+#include <unistd.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
 #include "person.h"
 
 void Person::setAge(int theAge) {
@@ -12,7 +17,9 @@ const char* Person::getName() {
 }
 
 void Person::setName(const char* theName) {
-    this->name = theName;
+    for (int i=0; i < sizeof(theName); ++i) {
+        this->name[i] = theName[i];
+    }
 }
 
 //singleton init on demand

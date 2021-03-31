@@ -5,7 +5,7 @@ class Person {
     private:
         static int shm_id;
         int age;
-        const char* name;
+        char name[100];
         // for storing the instance
         static Person* instance;
         // private constructor to prevent additional instances
