@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <sys/ipc.h>
 #include <sys/shm.h>
+#include <sys/wait.h>
 #include "person.h"
 
 void LogError (const char*);
@@ -27,6 +28,8 @@ int main() {
         std::cout<< getpid() << " Hello from Parent!" << std::endl;
         shared_class->setName("Katra");
         shared_class->setAge(65);
+        // sleep(5);
+        wait(0);
         std::cout << "Name: " << shared_class->getName() << std::endl << "Age: " << shared_class->getAge() << std::endl;
         return 0;
     }
