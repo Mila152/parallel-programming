@@ -1,10 +1,10 @@
 # Parallel Programming Solutions
 YSU 3rd course problem solutions 
 ## Table of contents
-[1. Shmem Singleton Class](##shmem-singleton-class)\
-[2. Test Platform](##test-platform)\
-[3. Message Queue](##message-queue)\
-[4. Job Manager](##job-manager)
+[1. Shmem Singleton Class](###shmem-singleton-class)\
+[2. Test Platform](###test-platform)\
+[3. Message Queue](###message-queue)\
+[4. Job Manager](###job-manager)
 
 ## Shmem Singleton Class
 ###### Description:
