@@ -1,2 +1,5 @@
 # Compiled Object files
 *.out
+
+# Fifo files
+*.fifo

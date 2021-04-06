@@ -40,15 +40,17 @@ int main () {
         }
 
         if (child_id == 0) {
-            //disable output on child by closing write descriptor
+            //disable output on child
             close(1);
-            //duplicate file descriptor for redirecting child output to parent
+            //duplicate pipe's write file descriptor for redirecting child output to parent
             dup(fds[1]);
+            //pipe file descriptors close
             close(fds[0]);
             close(fds[1]);
             return testarr[i](); 
         } else {
             const int result_size = 100;
+            //status text
             char result[result_size];
 
             //TODO:enhancement to read dynamically
@@ -63,7 +65,8 @@ int main () {
                 return 1;
             }
 
-            int status;  
+            int status;
+            //wait for child's status code
             wait(&status);
 
             //status macros
